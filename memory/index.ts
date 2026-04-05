@@ -660,6 +660,102 @@ export {
 } from './orchestrator'
 
 // ============================================================================
+// Hook System（hookSystem.ts）
+// ============================================================================
+
+export {
+  initializeHookSystem,
+  scanAndRegisterHooks,
+  executeHook,
+  emitHookEvent,
+  getAllHooks,
+  getHooksByEvent,
+  enableHook,
+  disableHook,
+  removeHook,
+  getHook,
+  onSessionStart,
+  onCanUseTool,
+  onError,
+  onSessionEnd,
+  formatHooks,
+  getHookStats,
+  onHookStarted,
+  onHookCompleted,
+  onHookFailed,
+  onHookEventEmitted,
+  type HookEvent,
+  type HookType,
+  type HookConfig,
+  type HookResult,
+  type HookContext
+} from './hookSystem'
+
+// ============================================================================
+// Multi-Agent System（multiAgent.ts）
+// ============================================================================
+
+export {
+  registerAgent,
+  registerDefaultAgents,
+  runAgent,
+  getAgentByType,
+  submitTradingRequest,
+  dispatchTask,
+  getAllAgents,
+  getRunningAgents,
+  enableAgent,
+  disableAgent,
+  stopAgent,
+  restartAgent,
+  onAgentStarted,
+  onAgentStopped,
+  onAgentError,
+  onTradingRequest,
+  onTradingApproved,
+  onTradingRejected,
+  formatAgents,
+  getAgentStats,
+  type AgentType,
+  type AgentStatus,
+  type AgentConfig,
+  type AgentInstance,
+  type TradingContext,
+  type RiskControlResult
+} from './multiAgent'
+
+// ============================================================================
+// MCP Browser（mcpBrowser.ts）
+// ============================================================================
+
+export {
+  saveLoginCredentials,
+  getLoginCredentials,
+  isLoggedIn,
+  clearLoginCredentials,
+  loginToPlatform,
+  scrapePage,
+  scrapeAndExtract,
+  createAutomationTask,
+  runAutomationTask,
+  quickScrapeZhihu,
+  quickScrapeDouyin,
+  quickScrapeFeishu,
+  onLoginSuccess,
+  onLoginFailed,
+  onScrapingStarted,
+  onScrapingCompleted,
+  getLoggedInPlatforms,
+  getAutomationTasks,
+  formatBrowserStatus,
+  type BrowserPlatform,
+  type LoginCredentials,
+  type ScrapingResult,
+  type AutomationTask,
+  type AutomationStep
+} from './mcpBrowser'
+
+// ============================================================================
 // 常量
 // ============================================================================
 
