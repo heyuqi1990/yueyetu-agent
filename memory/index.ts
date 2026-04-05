@@ -645,9 +645,24 @@ export {
 } from './toolSandbox'
 
 // ============================================================================
+// 月野兔 Orchestrator v3.0（orchestrator.ts）
+// ============================================================================
+
+export {
+  月野兔,
+  initialize,
+  getStatus,
+  addMemory,
+  dream,
+  runInBackground,
+  type 月野兔Config,
+  type 月野兔Status
+} from './orchestrator'
+
+// ============================================================================
 // 常量
 // ============================================================================
 
-export const VERSION = '2.3'
+export const VERSION = '3.0'
 export const MEMORY_DIR = '~/.openclaw/memory'
 export const BACKUP_DIR = 'backups'

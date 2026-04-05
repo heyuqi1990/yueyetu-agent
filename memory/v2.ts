@@ -1,14 +1,14 @@
 /**
- * Memory System v2.2 - Core Engine
+ * Memory System v3.0 - 月野兔核心引擎
  * 
  * 统一的记忆系统核心引擎
- * 整合Phase 1-4所有模块 + Signal/State/AutoMode
- * 实现记忆永不丢失
+ * 整合所有13个模块 + Orchestrator协调器
+ * 实现记忆永不丢失 + 防止幻想
  * 
- * v2.2 新增:
- * - Signal事件系统
- * - State全局状态管理
- * - Auto Mode权限分类器
+ * v3.0 新增:
+ * - 月野兔Orchestrator统一协调器
+ * - 模块间信号协调
+ * - 完整的安全防护体系
  */
 
 import { readFile, writeFile, readdir, mkdir, access, rename, unlink } from 'fs/promises'
