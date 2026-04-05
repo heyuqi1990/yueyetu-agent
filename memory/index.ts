@@ -565,6 +565,86 @@ export {
 } from './autoDream'
 
 // ============================================================================
+// GrowthBook（growthBook.ts）
+// ============================================================================
+
+export {
+  registerFeature,
+  registerFeatures,
+  getFeature,
+  getAllFeatures,
+  getFeatureValue,
+  setFeatureOverride,
+  removeFeatureOverride,
+  clearAllOverrides,
+  registerExperiment,
+  registerExperiments,
+  getExperiment,
+  getAllExperiments,
+  startExperiment,
+  pauseExperiment,
+  completeExperiment,
+  getExperimentValue,
+  registerBuiltInExperiments,
+  exportExperiments,
+  exportFeatures,
+  importExperiments,
+  importFeatures,
+  isFeatureEnabled,
+  getFeatureSource,
+  onFeatureUpdated,
+  onExperimentStarted,
+  onExperimentCompleted,
+  onExperimentOverridden,
+  type FeatureValue,
+  type Feature,
+  type Experiment,
+  type ExperimentResult,
+  type UserAttributes
+} from './growthBook'
+
+// ============================================================================
+// Tool Sandbox（toolSandbox.ts）
+// ============================================================================
+
+export {
+  initializeSandbox,
+  getToolPermission,
+  setToolPermission,
+  setToolPermissions,
+  resetToDefaultPermissions,
+  allowTool,
+  denyTool,
+  checkRateLimit,
+  isPathAllowed,
+  isDomainAllowed,
+  canExecuteTool,
+  recordToolCall,
+  getCallHistory,
+  getToolStats,
+  getSandboxConfig,
+  updateSandboxConfig,
+  enableSandbox,
+  disableSandbox,
+  isSandboxEnabled,
+  getDeniedTools,
+  getConfirmationRequiredTools,
+  clearCallHistory,
+  formatSandboxStatus,
+  onToolAllowed,
+  onToolDenied,
+  onToolRateLimited,
+  onPolicyChanged,
+  onSandboxViolation,
+  type ToolCategory,
+  type ToolPermission,
+  type SandboxConfig,
+  type ToolCallResult,
+  type RateLimitEntry,
+  type ToolCall
+} from './toolSandbox'
+
+// ============================================================================
 // 常量
 // ============================================================================
 
