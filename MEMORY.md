@@ -2,6 +2,8 @@
 
 ## 用户信息
 - **ID**: ou_9f7135d548ad8e7d6286b840a3c8541b
+- **姓名**: 鑫鑫淼
+- **职业**: A股职业交易者
 - **平台**: 飞书 (Feishu)
 - **时区**: Asia/Shanghai (GMT+8)
 - **语言**: 中文
@@ -106,6 +108,32 @@
 - 每Agent独立workspace + 工具权限隔离
 - 绑定规则：peer > guildId > teamId > accountId > channel > default
 - 通信机制：共享内存 + 摘要传递（避免上下文爆炸）
+
+### Claude Code记忆系统核心源码（v2.0升级参考）
+
+#### 四种记忆类型 (memoryTypes.ts)
+```
+user          - 用户角色、目标、职责
+feedback      - 用户反馈（纠正和确认）
+project       - 项目信息、目标、bug
+reference     - 外部系统指针
+```
+
+#### 核心设计模式
+- **Forked Agent模式**: 共享prompt cache，后台提取记忆
+- **工具权限控制**: 只允许Read/Edit/Write操作记忆文件
+- **双层索引**: MEMORY.md作为入口，记忆内容在独立文件
+- **前置matter格式**: name/description/type标准格式
+
+#### 记忆提取机制 (extractMemories.ts)
+- 自动从对话中提取记忆写入
+- 基于token阈值触发
+- 记忆去重检查
+
+#### Session Memory (sessionMemory.ts)
+- 会话期间持续记忆
+- 基于token和tool call阈值的触发机制
+- 自动压缩和摘要
 
 ### 蓝皮书Skills开发规范
 - 技能目录：skills/name/（name只允许小写字母、数字、连字符）
