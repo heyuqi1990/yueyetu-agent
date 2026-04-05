@@ -431,6 +431,105 @@ export {
 } from './skillRegistry'
 
 // ============================================================================
+// Forked Agent（forkedAgent.ts）
+// ============================================================================
+
+export {
+  runForkedAgent,
+  runForkedAgentWithProcess,
+  killForkedAgent,
+  getForkedAgent,
+  getRunningForkedAgents,
+  getQueueLength,
+  killAllForkedAgents,
+  getForkedAgentStats,
+  onAgentStarted,
+  onAgentCompleted,
+  onAgentFailed,
+  onAgentKilled,
+  onAgentOutput,
+  onQueueChanged,
+  type ForkedAgentResult,
+  type ForkedAgentOptions,
+  type ForkedAgentInstance
+} from './forkedAgent'
+
+// ============================================================================
+// Extract Memories（extractMemories.ts）
+// ============================================================================
+
+export {
+  extractMemories,
+  triggerManualExtraction,
+  triggerAutoExtraction,
+  shouldTriggerExtraction,
+  getExtractionRules,
+  addExtractionRule,
+  updateExtractionRule,
+  removeExtractionRule,
+  resetExtractionRules,
+  enableExtractionRule,
+  getExtractMemoryStats,
+  recordMessage,
+  recordToolCall,
+  onExtractionStarted,
+  onExtractionCompleted,
+  onExtractionFailed,
+  onMemoryExtracted,
+  onRuleMatched,
+  type ExtractionContext,
+  type TruncatedMessage,
+  type ExtractionTrigger,
+  type ExtractionRule,
+  type ExtractionResult,
+  type SavedMemory,
+  type ExtractTriggerConfig
+} from './extractMemories'
+
+// ============================================================================
+// Session Memory Enhanced（sessionMemoryEnhanced.ts）
+// ============================================================================
+
+export {
+  initializeSessionMemory,
+  addSessionEntry,
+  removeSessionEntry,
+  getSessionEntries,
+  getSessionEntriesByType,
+  getImportantEntries,
+  searchSessionEntries,
+  createSnapshot,
+  saveSession,
+  saveSessionTo,
+  loadSessionFrom,
+  addPendingExtraction,
+  getPendingExtractions,
+  clearPendingExtractions,
+  markExtracted,
+  updateSummary,
+  getSummary,
+  generateAutoSummary,
+  getSessionMetadata,
+  getSessionStats,
+  getSessionMemoryConfig,
+  updateSessionMemoryConfig,
+  hasUnsavedChanges,
+  clearSession,
+  getCurrentSessionId,
+  onEntryAdded,
+  onEntryRemoved,
+  onSessionLoaded,
+  onSessionSaved,
+  onSnapshotCreated,
+  onSummaryUpdated,
+  onMemoryOverflow,
+  type SessionMemoryEntry,
+  type SessionMemoryMetadata,
+  type SessionSnapshot,
+  type SessionMemoryConfig
+} from './sessionMemoryEnhanced'
+
+// ============================================================================
 // 常量
 // ============================================================================
 
