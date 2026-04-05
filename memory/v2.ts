@@ -1,8 +1,14 @@
 /**
- * Memory System v2.1 - Core Engine
+ * Memory System v2.2 - Core Engine
  * 
  * 统一的记忆系统核心引擎
- * 整合Phase 1-4所有模块，实现记忆永不丢失
+ * 整合Phase 1-4所有模块 + Signal/State/AutoMode
+ * 实现记忆永不丢失
+ * 
+ * v2.2 新增:
+ * - Signal事件系统
+ * - State全局状态管理
+ * - Auto Mode权限分类器
  */
 
 import { readFile, writeFile, readdir, mkdir, access, rename, unlink } from 'fs/promises'

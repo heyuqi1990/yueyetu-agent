@@ -193,9 +193,98 @@ export {
 } from './memoryScan'
 
 // ============================================================================
+// 信号系统（signal.ts）
+// ============================================================================
+
+export {
+  createSignal,
+  createOneTimeSignal,
+  createDebouncedSignal,
+  isSignal,
+  sessionSwitched,
+  memoryExtracted,
+  memorySaved,
+  memoryDeleted,
+  compactionStarted,
+  compactionCompleted,
+  systemInitialized,
+  errorOccurred,
+  configUpdated,
+  SignalManager,
+  globalSignalManager,
+  type Signal
+} from './signal'
+
+// ============================================================================
+// 状态管理（state.ts）
+// ============================================================================
+
+export {
+  initializeState,
+  getState,
+  isInitialized,
+  getSessionId,
+  getSessionMessageCount,
+  incrementSessionMessageCount,
+  getTotalMemories,
+  getMemoryCountByType,
+  getTotalTokens,
+  getExtractionStats,
+  getCompactionStats,
+  getInvokedSkills,
+  isSkillInvoked,
+  setMemoryStats,
+  setTotalTokens,
+  recordExtraction,
+  recordCompaction,
+  addSessionCronTask,
+  removeSessionCronTask,
+  getSessionCronTasks,
+  addInvokedSkill,
+  setBetaModeLatched,
+  getBetaModeLatched,
+  updateExtractConfig,
+  updateSessionConfig,
+  getConfig,
+  onStateChange,
+  watch,
+  resetState,
+  createNewSession,
+  type ModelUsage,
+  type SessionCronTask,
+  type InvokedSkillInfo,
+  type MemorySystemState
+} from './state'
+
+// ============================================================================
+// Auto Mode（autoMode.ts）
+// ============================================================================
+
+export {
+  AutoMode,
+  getAutoMode,
+  initializeAutoMode,
+  enableAutoMode,
+  disableAutoMode,
+  checkPermission,
+  critiqueRules,
+  createPermissionChecker,
+  needsConfirmation,
+  isAllowed,
+  isDenied,
+  type PermissionDecision,
+  type ToolUseContext,
+  type AutoModeRule,
+  type AutoModeConfig,
+  type PermissionRequestResult,
+  type ClassifierResult,
+  type LLMClassifier
+} from './autoMode'
+
+// ============================================================================
 // 常量
 // ============================================================================
 
-export const VERSION = '2.1'
+export const VERSION = '2.2'
 export const MEMORY_DIR = '~/.openclaw/memory'
 export const BACKUP_DIR = 'backups'
