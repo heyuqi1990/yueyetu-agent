@@ -372,6 +372,68 @@ export {
 // 常量
 // ============================================================================
 
+// ============================================================================
+// Update & Doctor（updateDoctor.ts）
+// ============================================================================
+
+export {
+  detectInstallationType,
+  getCurrentVersion,
+  getLatestVersion,
+  runDiagnostics,
+  formatDiagnostics,
+  checkForUpdate,
+  performUpdate,
+  generateFixCommands,
+  diagnosticsCompleted,
+  updateAvailable,
+  type InstallationType,
+  type DiagnosticCheck,
+  type DiagnosticResult,
+  type UpdateResult
+} from './updateDoctor'
+
+// ============================================================================
+// Skill Registry（skillRegistry.ts）
+// ============================================================================
+
+export {
+  scanAndRegisterSkills,
+  registerSkill,
+  unregisterSkill,
+  addOverride,
+  removeOverride,
+  disableSkill,
+  enableSkill,
+  getEnabledSkills,
+  getAllSkills,
+  getSkill,
+  getDisabledSkills,
+  getSkillsBySource,
+  getOverride,
+  getAllOverrides,
+  getSkillsGrouped,
+  getEffectiveSkill,
+  exportOverrides,
+  importOverrides,
+  clearAllOverrides,
+  searchSkills,
+  onRegistryChanged,
+  createDisableOverride,
+  createPriorityOverride,
+  formatSkill,
+  formatGroupedSkills,
+  type SkillSource,
+  type SkillOverride,
+  type SkillDefinition,
+  type SkillRegistryData,
+  type SkillGroup
+} from './skillRegistry'
+
+// ============================================================================
+// 常量
+// ============================================================================
+
 export const VERSION = '2.2'
 export const MEMORY_DIR = '~/.openclaw/memory'
 export const BACKUP_DIR = 'backups'
