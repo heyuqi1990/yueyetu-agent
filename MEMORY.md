@@ -76,6 +76,18 @@
 | 复杂推理 | DeepSeek-R1 | o3 | — |
 | 长文档 | Gemini 3.1 Pro (1M上下文) | DeepSeek-V4 | — |
 
+### 橙皮书核心架构（深度理解）
+**三层架构**：Gateway(控制平面) → Node(设备执行) → Channel(消息渠道)
+**四层记忆**：SOUL(永久) → TOOLS(按需) → USER(持久化) → Session(实时)
+**设计哲学**：4个核心工具(Read/Write/Edit/Bash)、CLI连接世界、自我扩展
+**反MCP立场**：「MCP是垃圾，不能scale，CLI才是终极接口」
+
+### 成本控制深层策略（橙皮书）
+- **Token消耗**：可能是普通聊天的几十到上百倍
+- **三级Fallback**：Sonnet → Haiku → DeepSeek，可降成本80-95%
+- **预算上限**：必须设置maxCostPerDay/maxTokensPerDay
+- **真实案例**：一觉醒来$1,100账单（Agent循环推理）
+
 ### 蓝皮书核心案例（20个赚钱案例精选）
 1. **Polymarket套利**：单账户累计$1.7M，单周最高$115K
 2. **ClawWork项目**：11小时完成$15,000项目
@@ -100,6 +112,13 @@
 - 唯一必需文件：SKILL.md（YAML frontmatter + 使用说明）
 - 渐进式披露：启动时只加载name和description，激活时加载完整内容
 - 发布流程：openclaw skill validate → openclaw skill publish
+
+### Skills三层优先级（橙皮书）
+```
+最高：<workspace>/skills/  (项目级，覆盖内置)
+中：~/.openclaw/skills/    (用户级全局生效)
+最低：bundled skills        (内置55个)
+```
 
 ### 蓝皮书10大行业方案
 1. 内容创作（自媒体内容工厂）
@@ -136,6 +155,10 @@
 根据蓝皮书深度阅读查漏补缺：
 - ✅ AGENTS.md：新增强烈推荐做法（渐进权限/测试沙盒/ROI记录）、反模式7条、50条踩坑精选
 - ✅ MEMORY.md：新增多Agent系统架构、Skills开发规范、10大行业方案、OpenClaw+Claude Code组合
+
+### 第四次升级 v1.3 (2026-04-05) - 橙皮书深度理解
+再次深度阅读橙皮书，深刻理解OpenClaw使用机制：
+- ✅ MEMORY.md：新增核心架构(Gateway-Node-Channel)、设计哲学(4工具/CLI/自我扩展)、安全深层理解、成本控制深层策略、Skills三层优先级
 
 ### 升级原则
 - 安全第一：外部代码执行前必须确认
