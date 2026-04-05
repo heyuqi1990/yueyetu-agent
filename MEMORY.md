@@ -10,25 +10,34 @@
 - **时区**: Asia/Shanghai (GMT+8)
 - **语言**: 中文
 
-## 记忆系统 v2.1 状态
+## 月野兔V3.0 状态
 - **状态**: ✅ 正式运行
+- **版本**: v3.0
+- **日期**: 2026-04-05
 - **位置**: `./memory/`
-- **索引**: `./memory/MEMORY.md`
-- **会话**: `./memory/session.md`
 
-### 四种记忆类型
-| 类型 | 目录 | 说明 |
+### 13个核心模块
+| 模块 | 文件 | 功能 |
 |------|------|------|
-| **user** | memory/user/ | 用户信息、偏好 |
-| **feedback** | memory/feedback/ | 反馈、指导 |
-| **project** | memory/project/ | 项目、进展 |
-| **reference** | memory/reference/ | 参考、指针 |
+| Signal | signal.ts | 事件信号机制 |
+| State | state.ts | 全局状态管理 |
+| AutoMode | autoMode.ts | LLM权限分类器 |
+| TaskFramework | taskFramework.ts | 任务生命周期 |
+| SessionCron | sessionCron.ts | 定时任务调度 |
+| UpdateDoctor | updateDoctor.ts | 系统诊断更新 |
+| SkillRegistry | skillRegistry.ts | Skill优先级覆盖 |
+| ForkedAgent | forkedAgent.ts | 后台异步任务 |
+| ExtractMemories | extractMemories.ts | 记忆自动提取 |
+| SessionMemory | sessionMemoryEnhanced.ts | 会话持久化 |
+| AutoDream | autoDream.ts | 自动反思 |
+| GrowthBook | growthBook.ts | AB测试 |
+| ToolSandbox | toolSandbox.ts | 工具沙箱 |
+| **Orchestrator** | orchestrator.ts | **统一协调器** |
 
-### 核心记忆文件
-- `memory/user/owner_identity.md` - 用户真实身份
-- `memory/user/trading_style.md` - A股交易风格
-- `memory/project/memory_system.md` - 记忆系统项目
-- `memory/session.md` - 当前会话记忆
+### 三层防护
+1. **记忆层** - 四种类型分类、自动提取、会话持久化
+2. **验证层** - 去重检查、Trust Level、记忆验证
+3. **执行层** - 沙箱隔离、权限分类、路径过滤
 
 ## 核心记忆架构
 
