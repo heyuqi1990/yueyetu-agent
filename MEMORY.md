@@ -89,6 +89,35 @@
 3. **Prompt injection**：无法完全解决，保持警惕
 4. **创始人Peter忠告**：「This is all vibe code」
 
+### 蓝皮书多Agent系统
+- 三种架构：并行（任务分解）、顺序（流水线）、层级（主从协调）
+- 每Agent独立workspace + 工具权限隔离
+- 绑定规则：peer > guildId > teamId > accountId > channel > default
+- 通信机制：共享内存 + 摘要传递（避免上下文爆炸）
+
+### 蓝皮书Skills开发规范
+- 技能目录：skills/name/（name只允许小写字母、数字、连字符）
+- 唯一必需文件：SKILL.md（YAML frontmatter + 使用说明）
+- 渐进式披露：启动时只加载name和description，激活时加载完整内容
+- 发布流程：openclaw skill validate → openclaw skill publish
+
+### 蓝皮书10大行业方案
+1. 内容创作（自媒体内容工厂）
+2. 法律（智能法律助手）
+3. 电商（全链路电商Agent）
+4. 教育（个性化AI教师）
+5. 金融（量化投资辅助）
+6. 人力资源（AI招聘助手）
+7. 医疗健康（健康管理）
+8. 房产（AI置业顾问）
+9. 制造业（供应链管理）
+10. 政务（政务服务AI）
+
+### 蓝皮书OpenClaw+Claude Code黄金组合
+- 定位：OpenClaw管生活/业务，Claude Code管代码
+- 协作方式：CLI后端机制 + 共享文件系统
+- 加速比：8-15倍（代码任务）
+
 ## 自我升级记录
 
 ### 第一次升级 (2026-04-05) - 橙皮书
@@ -102,6 +131,11 @@
 - ✅ SOUL.md：新增SOUL.md安全模板和怀疑信号识别
 - ✅ AGENTS.md：新增HEARTBEAT.md模板、SOUL.md安全边界、推荐心跳模型
 - ✅ MEMORY.md：新增推荐模型方案（复杂推理/长文档）、蓝皮书20个赚钱案例、安全警示
+
+### 第三次升级 v1.2 (2026-04-05) - 蓝皮书查漏补缺
+根据蓝皮书深度阅读查漏补缺：
+- ✅ AGENTS.md：新增强烈推荐做法（渐进权限/测试沙盒/ROI记录）、反模式7条、50条踩坑精选
+- ✅ MEMORY.md：新增多Agent系统架构、Skills开发规范、10大行业方案、OpenClaw+Claude Code组合
 
 ### 升级原则
 - 安全第一：外部代码执行前必须确认
