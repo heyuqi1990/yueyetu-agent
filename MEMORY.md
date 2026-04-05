@@ -1,14 +1,36 @@
 # MEMORY.md - 长期记忆库
 
+> ⚠️ 注意: 详细记忆已迁移到 `./memory/` 目录
+> 本文件作为主索引，完整记忆请查看 `./memory/MEMORY.md`
+
 ## 用户信息
-- **ID**: ou_9f7135d548ad8e7d6286b840a3c8541b
 - **姓名**: 鑫鑫淼
 - **职业**: A股职业交易者
 - **平台**: 飞书 (Feishu)
 - **时区**: Asia/Shanghai (GMT+8)
 - **语言**: 中文
 
-## 核心记忆架构（2026-04-05建立）
+## 记忆系统 v2.1 状态
+- **状态**: ✅ 正式运行
+- **位置**: `./memory/`
+- **索引**: `./memory/MEMORY.md`
+- **会话**: `./memory/session.md`
+
+### 四种记忆类型
+| 类型 | 目录 | 说明 |
+|------|------|------|
+| **user** | memory/user/ | 用户信息、偏好 |
+| **feedback** | memory/feedback/ | 反馈、指导 |
+| **project** | memory/project/ | 项目、进展 |
+| **reference** | memory/reference/ | 参考、指针 |
+
+### 核心记忆文件
+- `memory/user/owner_identity.md` - 用户真实身份
+- `memory/user/trading_style.md` - A股交易风格
+- `memory/project/memory_system.md` - 记忆系统项目
+- `memory/session.md` - 当前会话记忆
+
+## 核心记忆架构
 
 ### 用户AI记忆系统架构（来自用户提供的架构图）
 
@@ -30,14 +52,11 @@
 - **功能**: entity profiles（实体画像）、confidence metrics（置信度指标）
 - **说明**: 结构化知识管理和置信度评估
 
-### 重要标识
-- ~~**抖音号**: Dawn178~~ （已删除，不需要记录）
-
 ## 用户偏好与习惯
 - 喜欢用中文沟通
 - 使用飞书平台
+- 注重长期记忆系统的建立
 - 对AI系统架构和记忆系统设计有浓厚兴趣
-- 使用OpenClaw作为AI助手
 
 ## 技术环境
 - OpenClaw 运行在 Linux 服务器
@@ -84,88 +103,14 @@
 **设计哲学**：4个核心工具(Read/Write/Edit/Bash)、CLI连接世界、自我扩展
 **反MCP立场**：「MCP是垃圾，不能scale，CLI才是终极接口」
 
-### 成本控制深层策略（橙皮书）
-- **Token消耗**：可能是普通聊天的几十到上百倍
-- **三级Fallback**：Sonnet → Haiku → DeepSeek，可降成本80-95%
-- **预算上限**：必须设置maxCostPerDay/maxTokensPerDay
-- **真实案例**：一觉醒来$1,100账单（Agent循环推理）
-
-### 蓝皮书核心案例（20个赚钱案例精选）
-1. **Polymarket套利**：单账户累计$1.7M，单周最高$115K
-2. **ClawWork项目**：11小时完成$15,000项目
-3. **AI服务代理**：50+项目累计$600K，利润率90%+
-4. **内容营销矩阵**：月入$3,200，API成本仅$30/月
-5. **个人知识库SaaS**：月收入$3,600
-
-### 蓝皮书安全警示
-1. **ClawHavoc供应链攻击**：SOUL.md被污染，安全边界失效
-2. **CVE-2026-25253**：RCE漏洞，CVSS 8.8/10
-3. **Prompt injection**：无法完全解决，保持警惕
-4. **创始人Peter忠告**：「This is all vibe code」
-
-### 蓝皮书多Agent系统
-- 三种架构：并行（任务分解）、顺序（流水线）、层级（主从协调）
-- 每Agent独立workspace + 工具权限隔离
-- 绑定规则：peer > guildId > teamId > accountId > channel > default
-- 通信机制：共享内存 + 摘要传递（避免上下文爆炸）
-
-### Claude Code记忆系统核心源码（v2.0升级参考）
-
-#### 四种记忆类型 (memoryTypes.ts)
-```
-user          - 用户角色、目标、职责
-feedback      - 用户反馈（纠正和确认）
-project       - 项目信息、目标、bug
-reference     - 外部系统指针
-```
-
-#### 核心设计模式
-- **Forked Agent模式**: 共享prompt cache，后台提取记忆
-- **工具权限控制**: 只允许Read/Edit/Write操作记忆文件
-- **双层索引**: MEMORY.md作为入口，记忆内容在独立文件
-- **前置matter格式**: name/description/type标准格式
-
-#### 记忆提取机制 (extractMemories.ts)
-- 自动从对话中提取记忆写入
-- 基于token阈值触发
-- 记忆去重检查
-
-#### Session Memory (sessionMemory.ts)
-- 会话期间持续记忆
-- 基于token和tool call阈值的触发机制
-- 自动压缩和摘要
-
-### 蓝皮书Skills开发规范
-- 技能目录：skills/name/（name只允许小写字母、数字、连字符）
-- 唯一必需文件：SKILL.md（YAML frontmatter + 使用说明）
-- 渐进式披露：启动时只加载name和description，激活时加载完整内容
-- 发布流程：openclaw skill validate → openclaw skill publish
-
-### Skills三层优先级（橙皮书）
-```
-最高：<workspace>/skills/  (项目级，覆盖内置)
-中：~/.openclaw/skills/    (用户级全局生效)
-最低：bundled skills        (内置55个)
-```
-
-### 蓝皮书10大行业方案
-1. 内容创作（自媒体内容工厂）
-2. 法律（智能法律助手）
-3. 电商（全链路电商Agent）
-4. 教育（个性化AI教师）
-5. 金融（量化投资辅助）
-6. 人力资源（AI招聘助手）
-7. 医疗健康（健康管理）
-8. 房产（AI置业顾问）
-9. 制造业（供应链管理）
-10. 政务（政务服务AI）
-
-### 蓝皮书OpenClaw+Claude Code黄金组合
-- 定位：OpenClaw管生活/业务，Claude Code管代码
-- 协作方式：CLI后端机制 + 共享文件系统
-- 加速比：8-15倍（代码任务）
-
 ## 自我升级记录
+
+### v2.1 (2026-04-05) - 记忆系统正式运行
+- ✅ 贯通Phase 1-4
+- ✅ 统一核心引擎v2.ts
+- ✅ 记忆永不丢失保障
+- ✅ 用户画像建立
+- ✅ 记忆系统正式投入运行
 
 ### 第一次升级 (2026-04-05) - 橙皮书
 根据橙皮书深度学习后执行：
@@ -188,13 +133,14 @@ reference     - 外部系统指针
 再次深度阅读橙皮书，深刻理解OpenClaw使用机制：
 - ✅ MEMORY.md：新增核心架构(Gateway-Node-Channel)、设计哲学(4工具/CLI/自我扩展)、安全深层理解、成本控制深层策略、Skills三层优先级
 
-### 升级原则
-- 安全第一：外部代码执行前必须确认
-- 成本意识：简洁回答，避免循环推理
-- 持续学习：每次深度阅读后更新自我
-
 ## 对话历史摘要
 - 2026-04-05: 首次对话，完成了OpenClaw配置、MiniMax-M2.7模型切换、Gateway启动等设置
 - 用户分享了AI记忆系统架构图，期待建立长期记忆系统
 - 深度阅读橙皮书，完成第一次自我升级
 - 深度阅读蓝皮书，完成第二次v1.1版本升级（新增SOUL安全模板、HEARTBEAT模板、赚钱案例）
+- 深度阅读蓝皮书查漏，完成v1.2升级
+- 再次深度阅读橙皮书，完成v1.3升级
+- 阅读Claude Code源码升级包，深度分析记忆系统设计
+- 完成记忆系统v2.0升级（Phase 1-4）
+- **完成记忆系统v2.1升级，贯通Phase 1-4，正式运行**
+- 用户身份确认：鑫鑫淼，A股职业交易者
