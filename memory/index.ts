@@ -3,6 +3,9 @@
  * 
  * 记忆系统核心模块
  * 参考: Claude Code extractMemories.ts
+ * 
+ * Phase 1: 基础架构 (memoryTypes, memoryScan, core CRUD)
+ * Phase 2: 自动提取 (extractPrompt, autoExtract, toolPermissions)
  */
 
 import { readdir, readFile, writeFile, mkdir } from 'fs/promises'
@@ -15,6 +18,36 @@ import {
 
 export type { MemoryType }
 export { MEMORY_TYPES, parseMemoryType }
+
+// 导出Phase 2模块
+export { 
+  buildExtractPrompt,
+  buildAccessPrompt,
+  buildExplicitSavePrompt,
+  buildForgetPrompt 
+} from './extractPrompt'
+
+export {
+  shouldExtract,
+  markExtractionComplete,
+  createExtractionResult,
+  createExtractionError,
+  getStats,
+  resetStats,
+  setExtractConfig,
+  getExtractConfig,
+  type ExtractConfig,
+  type ExtractionResult,
+  type ExtractionStats
+} from './autoExtract'
+
+export {
+  createStandardMemoryToolChecker,
+  createSessionMemoryToolChecker,
+  canWriteMemory,
+  isReadOnlyPath,
+  type PermissionDecision
+} from './toolPermissions'
 
 /**
  * 记忆文件头

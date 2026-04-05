@@ -6,18 +6,35 @@
 
 ```
 memory/
-├── index.ts              # 核心模块
-├── memoryTypes.ts        # 记忆类型定义
-├── memoryScan.ts         # 记忆扫描工具
-├── MEMORY_SYSTEM_PROMPT.md # 提示模板片段
-├── MEMORY.md             # 索引入口
-├── memory/               # 记忆文件存储
+├── index.ts                    # 核心模块（导出）
+├── memoryTypes.ts              # 记忆类型定义
+├── memoryScan.ts               # 记忆扫描工具
+├── MEMORY_SYSTEM_PROMPT.md     # 提示模板片段
+├── extractPrompt.ts            # Phase 2: 提取提示生成器
+├── autoExtract.ts              # Phase 2: 自动提取机制
+├── toolPermissions.ts          # Phase 2: 工具权限控制
+├── MEMORY.md                   # 索引入口
+├── memory/                     # 记忆文件存储
 │   ├── user/
 │   ├── feedback/
 │   ├── project/
 │   └── reference/
-└── README.md            # 本文件
+└── README.md                  # 本文件
 ```
+
+## Phase 1: 基础架构 ✅
+- [x] 记忆类型定义（user/feedback/project/reference）
+- [x] 核心CRUD操作
+- [x] 记忆扫描工具
+- [x] 前置元数据格式
+- [x] 索引结构
+
+## Phase 2: 自动提取 🔄
+- [x] 提取提示生成器（buildExtractPrompt）
+- [x] 阈值触发机制（autoExtract）
+- [x] 工具权限控制（toolPermissions）
+- [ ] 提取结果处理
+- [ ] 与主系统集成
 
 ## 四种记忆类型
 
