@@ -10,13 +10,13 @@
 - **时区**: Asia/Shanghai (GMT+8)
 - **语言**: 中文
 
-## 月野兔V3.0 状态
+## 月野兔V3.5 状态
 - **状态**: ✅ 正式运行
-- **版本**: v3.0
+- **版本**: v3.5
 - **日期**: 2026-04-05
 - **位置**: `./memory/`
 
-### 13个核心模块
+### 19个核心模块
 | 模块 | 文件 | 功能 |
 |------|------|------|
 | Signal | signal.ts | 事件信号机制 |
@@ -32,7 +32,21 @@
 | AutoDream | autoDream.ts | 自动反思 |
 | GrowthBook | growthBook.ts | AB测试 |
 | ToolSandbox | toolSandbox.ts | 工具沙箱 |
-| **Orchestrator** | orchestrator.ts | **统一协调器** |
+| Orchestrator | orchestrator.ts | 统一协调器 |
+| **HookSystem** | hookSystem.ts | **官方Hooks系统** |
+| **MultiAgent** | multiAgent.ts | **多智能体** |
+| **MCPBrowser** | mcpBrowser.ts | **CDP浏览器集成** |
+| **SkillsIntegration** | skillsIntegration.ts | **Skills统一接口** |
+
+### Skills统一接口（v3.5新增）
+| 类别 | Skills数量 | 示例 |
+|------|------------|------|
+| memory | 5 | memory.save/dream/extract |
+| trading | 4 | trading.submit/analyze/risk |
+| browser | 5 | browser.open/scrape/login |
+| automation | 3 | automation.create/run |
+| analysis | 3 | analysis.market/stock/news |
+| system | 4 | system.status/diagnostics/hooks |
 
 ### 三层防护
 1. **记忆层** - 四种类型分类、自动提取、会话持久化
