@@ -29,12 +29,18 @@ memory/
 - [x] 前置元数据格式
 - [x] 索引结构
 
-## Phase 2: 自动提取 🔄
+## Phase 2: 自动提取 ✅
 - [x] 提取提示生成器（buildExtractPrompt）
 - [x] 阈值触发机制（autoExtract）
 - [x] 工具权限控制（toolPermissions）
-- [ ] 提取结果处理
-- [ ] 与主系统集成
+- [x] 提取结果处理
+- [ ] 与主系统集成（需OpenClaw集成）
+
+## Phase 3: Session记忆 ✅
+- [x] SessionMemory模块
+- [x] 阈值触发逻辑
+- [x] 记忆压缩（compact.ts）
+- [x] 与Compaction集成
 
 ## 四种记忆类型
 

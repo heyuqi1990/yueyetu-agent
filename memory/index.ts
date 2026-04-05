@@ -49,6 +49,39 @@ export {
   type PermissionDecision
 } from './toolPermissions'
 
+// 导出Phase 3模块
+export {
+  shouldExtractMemory,
+  setupSessionMemoryFile,
+  getSessionMemoryTemplate,
+  buildSessionMemoryUpdatePrompt,
+  createSessionMemoryToolCheckerForUpdate,
+  getSessionMemoryPath,
+  getSessionMemoryDir,
+  setSessionMemoryConfig,
+  getSessionMemoryConfig,
+  resetSessionMemory,
+  markInitialized,
+  isSessionMemoryInitialized,
+  recordExtractionTokenCount,
+  setLastExtractionMessageId,
+  getLastExtractionMessageId,
+  type SessionMemoryConfig
+} from './sessionMemory'
+
+export {
+  setMemoryCompactConfig,
+  getMemoryCompactConfig,
+  calculateMessagesToKeepIndex,
+  createCompactBoundaryMessage,
+  buildPostCompactMessages,
+  truncateSessionMemoryForCompact,
+  createCompactionResultFromSessionMemory,
+  isCompactBoundaryMessage,
+  type MemoryCompactConfig,
+  type CompactionResult
+} from './compact'
+
 /**
  * 记忆文件头
  */
