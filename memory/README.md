@@ -42,6 +42,12 @@ memory/
 - [x] 记忆压缩（compact.ts）
 - [x] 与Compaction集成
 
+## Phase 4: 优化 ✅
+- [x] 去重检查（dedup.ts）
+- [x] 验证机制（verify.ts）
+- [x] Token优化（tokenOptimizer.ts）
+- [x] 批量分析支持
+
 ## 四种记忆类型
 
 | 类型 | 说明 | 保存时机 |

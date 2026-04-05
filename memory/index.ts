@@ -82,6 +82,44 @@ export {
   type CompactionResult
 } from './compact'
 
+// 导出Phase 4模块
+export {
+  checkDuplicate,
+  checkDuplicateWithScan,
+  generateDuplicateAdvice,
+  scanAllMemoryEntries,
+  type MemoryEntry,
+  type SimilarityResult
+} from './dedup'
+
+export {
+  validateFrontmatter,
+  verifyFileExists,
+  verifyReferencedPaths,
+  checkStaleness,
+  assessTrustLevel,
+  buildVerificationReport,
+  getPostVerificationAdvice,
+  type VerificationResult,
+  type VerificationIssue,
+  type TrustLevel
+} from './verify'
+
+export {
+  estimateTokens,
+  analyzeMemoryTokens,
+  generateOptimizationSuggestions,
+  applyOptimization,
+  calculateCompressionRate,
+  getMemorySizeCategory,
+  getSizeCategoryDescription,
+  batchAnalyzeMemories,
+  getTokenBudgetAdvice,
+  type TokenStats,
+  type OptimizationSuggestion,
+  type MemorySizeCategory
+} from './tokenOptimizer'
+
 /**
  * 记忆文件头
  */
