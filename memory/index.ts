@@ -282,6 +282,93 @@ export {
 } from './autoMode'
 
 // ============================================================================
+// Task Framework（taskFramework.ts）
+// ============================================================================
+
+export {
+  registerTask,
+  updateTaskState,
+  completeTask,
+  failTask,
+  killTask,
+  notifyTask,
+  getTask,
+  getAllTasks,
+  getRunningTasks,
+  getTerminalTasks,
+  isInGracePeriod,
+  shouldEvict,
+  addTaskOutput,
+  getTaskOutput,
+  getTaskOutputDelta,
+  clearTaskOutput,
+  pollTasks,
+  startTaskPolling,
+  stopTaskPolling,
+  generateTaskAttachments,
+  onTaskStarted,
+  onTaskCompleted,
+  onTaskFailed,
+  onTaskKilled,
+  onTaskEvicted,
+  onTaskOutput,
+  onTaskStatusChanged,
+  generateTaskId,
+  getTaskStats,
+  resetAllTasks,
+  removeTask,
+  isTerminalStatus,
+  getTaskDuration,
+  formatTask,
+  PANEL_GRACE_MS,
+  type TaskStatus,
+  type TaskType,
+  type Task,
+  type TaskAttachment,
+  type TaskStateChange,
+  type RegisterTaskOptions,
+  type TaskOutput
+} from './taskFramework'
+
+// ============================================================================
+// Session Cron（sessionCron.ts）
+// ============================================================================
+
+export {
+  registerCronTask,
+  removeCronTask,
+  enableCronTask,
+  pauseCronTask,
+  updateCronTask,
+  startCronScheduler,
+  stopCronScheduler,
+  isCronSchedulerRunning,
+  getAllCronTasks,
+  getRunningCronTasks,
+  getPendingCronTasks,
+  getCronTask,
+  getUpcomingCronTasks,
+  getCronTaskStats,
+  everyMinutes,
+  hourly,
+  daily,
+  weekly,
+  once,
+  parseCron,
+  isValidCron,
+  getNextRunTime,
+  formatNextRun,
+  describeCron,
+  exportCronTasks,
+  importCronTasks,
+  clearAllCronTasks,
+  type CronTaskConfig,
+  type CronTaskInstance,
+  type CronExecutionResult,
+  type CronTaskEvent
+} from './sessionCron'
+
+// ============================================================================
 // 常量
 // ============================================================================
 
