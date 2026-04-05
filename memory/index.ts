@@ -530,9 +530,44 @@ export {
 } from './sessionMemoryEnhanced'
 
 // ============================================================================
+// AutoDream（autoDream.ts）
+// ============================================================================
+
+export {
+  dream,
+  startDreamScheduler,
+  stopDreamScheduler,
+  startIdleMonitor,
+  stopIdleMonitor,
+  touch,
+  getIdleTimeMs,
+  isIdle,
+  canDream,
+  saveInsightAsMemory,
+  getDreamConfig,
+  updateDreamConfig,
+  enableDream,
+  disableDream,
+  getDreamState,
+  resetDreamState,
+  getDreamStats,
+  formatLastDream,
+  onDreamStarted,
+  onDreamCompleted,
+  onDreamFailed,
+  onInsightGenerated,
+  onIdleEntered,
+  onIdleExited,
+  type DreamConfig,
+  type DreamResult,
+  type DreamInsight,
+  type DreamState
+} from './autoDream'
+
+// ============================================================================
 // 常量
 // ============================================================================
 
-export const VERSION = '2.2'
+export const VERSION = '2.3'
 export const MEMORY_DIR = '~/.openclaw/memory'
 export const BACKUP_DIR = 'backups'
