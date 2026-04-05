@@ -1,6 +1,6 @@
-# 月野兔 V3.0
+# 月野兔 V3.5
 
-> AI记忆与安全系统 — 永不失忆 · 防止幻想
+> AI记忆与安全系统 — 永不失忆 · 防止幻想 · Skills统一接口
 
 ## 版本历史
 
@@ -9,13 +9,11 @@
 | v1.0 | 2026-04-05 | 基础记忆系统 |
 | v2.0 | 2026-04-05 | Claude Code源码升级，Phase 1-4 |
 | v2.1 | 2026-04-05 | 统一核心引擎 |
-| v2.2 | 2026-04-05 | Phase 1: Signal/State/AutoMode |
-| | | Phase 2: TaskFramework/SessionCron |
-| | | Phase 3: UpdateDoctor/SkillRegistry |
-| v2.3 | 2026-04-05 | High: ForkedAgent/ExtractMemories/SessionMemoryEnhanced |
-| | | Low: AutoDream |
-| | | Medium: GrowthBook/ToolSandbox |
-| **v3.0** | 2026-04-05 | **月野兔Orchestrator统一协调器** |
+| v2.2 | 2026-04-05 | Phase 1-3功能模块 |
+| v2.3 | 2026-04-05 | High/Low/Medium功能模块 |
+| **v3.0** | 2026-04-05 | **Orchestrator统一协调器** |
+| **v3.1** | 2026-04-05 | Hook/Multi-Agent/MCP Browser |
+| **v3.5** | 2026-04-05 | **Skills能力整合** |
 
 ## 架构图
 

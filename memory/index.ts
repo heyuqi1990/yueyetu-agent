@@ -645,7 +645,7 @@ export {
 } from './toolSandbox'
 
 // ============================================================================
-// 月野兔 Orchestrator v3.0（orchestrator.ts）
+// 月野兔 Orchestrator v3.5（orchestrator.ts）
 // ============================================================================
 
 export {
@@ -756,9 +756,35 @@ export {
 } from './mcpBrowser'
 
 // ============================================================================
+// Skills Integration v3.5（skillsIntegration.ts）
+// ============================================================================
+
+export {
+  initializeSkills,
+  executeSkill,
+  getAllSkills,
+  getSkillsByCategory,
+  getEnabledSkills,
+  searchSkills,
+  enableSkill,
+  disableSkill,
+  formatSkills,
+  getSkillsStats,
+  memory,
+  trading,
+  browser,
+  automation,
+  analysis,
+  system,
+  type SkillCategory,
+  type Skill,
+  type SkillResult
+} from './skillsIntegration'
+
+// ============================================================================
 // 常量
 // ============================================================================
 
-export const VERSION = '3.0'
+export const VERSION = '3.5'
 export const MEMORY_DIR = '~/.openclaw/memory'
 export const BACKUP_DIR = 'backups'

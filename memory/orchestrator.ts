@@ -1,7 +1,8 @@
 /**
- * 月野兔 Orchestrator v3.0 - 统一协调器
+ * 月野兔 Orchestrator v3.5 - 统一协调器
  * 
  * 打通所有模块，形成完整的AI记忆与安全系统
+ * v3.5: 集成Skills能力，整合所有功能
  */
 
 // ============================================================================
@@ -21,6 +22,10 @@ import * as sessionMemory from './sessionMemoryEnhanced'
 import * as autoDream from './autoDream'
 import * as growthBook from './growthBook'
 import * as toolSandbox from './toolSandbox'
+import * as hookSystem from './hookSystem'
+import * as multiAgent from './multiAgent'
+import * as mcpBrowser from './mcpBrowser'
+import * as skillsIntegration from './skillsIntegration'
 
 // ============================================================================
 // 类型定义
@@ -35,6 +40,10 @@ export interface 月野兔Config {
     forkedAgent: boolean
     toolSandbox: boolean
     growthBook: boolean
+    hooks: boolean
+    multiAgent: boolean
+    mcpBrowser: boolean
+    skills: boolean
   }
   modules: {
     [key: string]: boolean
@@ -51,6 +60,7 @@ export interface 月野兔Status {
     extractions: number
     dreams: number
     agents: number
+    skills: number
   }
 }
 
@@ -65,14 +75,18 @@ class 月野兔Orchestrator {
 
   constructor() {
     this.config = {
-      version: '3.0',
+      version: '3.5',
       enabled: {
         memory: true,
         autoDream: true,
         autoExtract: true,
         forkedAgent: true,
         toolSandbox: true,
-        growthBook: true
+        growthBook: true,
+        hooks: true,
+        multiAgent: true,
+        mcpBrowser: true,
+        skills: true
       },
       modules: {}
     }
@@ -84,7 +98,7 @@ class 月野兔Orchestrator {
   async initialize(): Promise<void> {
     if (this.initialized) return
     
-    console.log('[月野兔] 🚀 初始化中...')
+    console.log('[月野兔] 🚀 初始化V3.5中...')
     this.startTime = Date.now()
 
     // 1. 初始化State
@@ -112,13 +126,25 @@ class 月野兔Orchestrator {
     taskFramework.startTaskPolling(1000)
     console.log('[月野兔] ✅ TaskFramework启动')
 
-    // 7. 设置模块间协调信号
+    // 7. 初始化Hook系统
+    await hookSystem.initializeHookSystem()
+    console.log('[月野兔] ✅ HookSystem初始化')
+
+    // 8. 注册Multi-Agent
+    multiAgent.registerDefaultAgents()
+    console.log('[月野兔] ✅ MultiAgent初始化')
+
+    // 9. 初始化Skills系统
+    await skillsIntegration.initializeSkills()
+    console.log('[月野兔] ✅ Skills系统初始化')
+
+    // 10. 设置模块间协调信号
     this.setupSignals()
 
     this.initialized = true
     signal.systemInitialized.emit()
 
-    console.log('[月野兔] 🎉 月野兔V3.0初始化完成！')
+    console.log('[月野兔] 🎉 月野兔V3.5初始化完成！')
   }
 
   /**
@@ -278,14 +304,19 @@ class 月野兔Orchestrator {
         autoDream: autoDream.getDreamState().isDreaming,
         toolSandbox: toolSandbox.isSandboxEnabled(),
         growthBook: true,
-        forkedAgent: forkedAgent.getForkedAgentStats().running > 0
+        forkedAgent: forkedAgent.getForkedAgentStats().running > 0,
+        hooks: true,
+        multiAgent: true,
+        mcpBrowser: true,
+        skills: true
       },
       stats: {
         memories: state.getTotalMemories(),
         sessions: 1,
         extractions: state.getExtractionStats().count,
         dreams: autoDream.getDreamStats().dreamCount,
-        agents: forkedAgent.getForkedAgentStats().running
+        agents: forkedAgent.getForkedAgentStats().running,
+        skills: skillsIntegration.getSkillsStats().total
       }
     }
   }
