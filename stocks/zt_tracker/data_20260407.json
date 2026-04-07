@@ -1,0 +1,45 @@
+{
+  "date": "20260407",
+  "market": {
+    "index": "上证指数",
+    "close": 11.03,
+    "change_pct": -0.81,
+    "date": "2026-04-07"
+  },
+  "analysis": {
+    "total_count": 93,
+    "industry_top10": {
+      "化学原料": 11,
+      "化学制品": 8,
+      "农化制品": 7,
+      "通信设备": 4,
+      "化学制药": 4,
+      "通用设备": 4,
+      "化学纤维": 4,
+      "专业工程": 3,
+      "文娱用品": 3,
+      "电池": 3
+    },
+    "avg_amount": 652563566.967742,
+    "median_amount": 461766688.0,
+    "avg_cap": 10070585598.289246,
+    "median_cap": 7387237320.059999,
+    "continuous_count": 7,
+    "continuous_pct": 7.526881720430108,
+    "morning_count": 33,
+    "zhaban_rate": 280.6451612903226,
+    "target_stock": {
+      "name": "舒华体育",
+      "code": "605299",
+      "close": 23.06,
+      "change_pct": 10.019083976745605,
+      "turnover": 16.951215744018555,
+      "amount": 1494872464.0,
+      "cap": 9436763620.38,
+      "first_time": "135344",
+      "continuous": 1,
+      "industry": "文娱用品"
+    }
+  },
+  "zt_count": 93
+}
