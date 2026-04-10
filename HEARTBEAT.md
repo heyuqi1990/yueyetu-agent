@@ -1,7 +1,38 @@
-# HEARTBEAT.md Template
+# HEARTBEAT.md
 
-```markdown
-# Keep this file empty (or with only comments) to skip heartbeat API calls.
+## 待处理任务
 
-# Add tasks below when you want the agent to check something periodically.
-```
+### 涨停板追踪检查
+每天16:05后，首次收到消息时检查是否有新的涨停板报告：
+- 检查文件: `stocks/zt_tracker/push_YYYYMMDD.txt`
+- 如果存在，读取并发送给用户（飞书）
+- 发送后删除该文件避免重复
+
+### 舒华体育追踪检查
+每天16:00后，首次收到消息时检查是否有新的舒华体育报告：
+- 检查文件: `stocks/605299/daily_report.md`
+- 如果存在，读取并发送给用户（飞书）
+
+### 早间新闻推送（9:00-9:30）
+每天9:00后检查：
+- 检查文件: `news/push_YYYYMMDD_morning.txt`
+- 如果存在，读取并发送给用户（飞书）
+- 发送后删除该文件
+
+### 晚间新闻推送（23:00-23:30）
+每天23:00后检查：
+- 检查文件: `news/push_YYYYMMDD_evening.txt`
+- 如果存在，读取并发送给用户（飞书）
+- 发送后删除该文件
+
+## 定时任务汇总
+| 时间 | 任务 | 文件 |
+|------|------|------|
+| 09:00 | 早间新闻 | news/get_news.py |
+| 16:00 | 舒华体育追踪 | stocks/605299/track.py |
+| 16:05 | 涨停板分析 | stocks/zt_tracker/zt_analysis.py |
+| 23:00 | 晚间新闻 | news/get_news.py |
+
+## 触发条件
+- 时间在上述时间点之后
+- 之前没有发送过今日报告
